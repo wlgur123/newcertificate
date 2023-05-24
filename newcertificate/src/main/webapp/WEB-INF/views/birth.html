@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>출생신고</title>
+</head>
+<body>
+<h2>출생신고 양식</h2>
+<form action="/residents/birthReport" method="post">
+  <label for="birthDeathTypeCode">출생사망 유형 코드:</label><br>
+  <input type="text" id="birthDeathTypeCode" name="birthDeathTypeCode" required><br>
+
+  <label for="residentSerialNumber">출생자주민 일련번호:</label><br>
+  <input type="text" id="residentSerialNumber" name="residentSerialNumber" required><br>
+
+  <label for="reportResidentSerialNumber">신고주민 일련번호:</label><br>
+  <input type="text" id="reportResidentSerialNumber" name="reportResidentSerialNumber" required><br>
+
+  <label for="birthDeathReportDate">출생신고일자:</label><br>
+  <input type="datetime-local" id="birthDeathReportDate" name="birthDeathReportDate" required><br>
+
+  <label for="birthReportQualificationsCode">출생자와의 관계:</label><br>
+  <input type="text" id="birthReportQualificationsCode" name="birthReportQualificationsCode"><br>
+
+  <label for="emailAddress">신고자 이메일주소:</label><br>
+  <input type="text" id="emailAddress" name="emailAddress"><br>
+
+  <label for="phoneNumber">신고자 전화번호:</label><br>
+  <input type="text" id="phoneNumber" name="phoneNumber" required><br>
+
+  <input type="submit" value="출생신고 제출">
+</form>
+</body>
+</html>

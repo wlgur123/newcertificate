@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>가족관계 증명서</title>
+</head>
+<body>
+<h2>가족 관계</h2>
+<table border = 1>
+  <thead>
+    <tr>
+      <th>가족 일련번호</th>
+      <th>주민 일련번호</th>
+      <th>가족 관계 코드</th>
+    </tr>
+  </thead>
+  <tbody th:each="relationship : ${relationships}">
+  <tr>
+    <td th:text="${relationship.pk.familyResidentSerialNumber}"></td>
+    <td th:text="${relationship.pk.resident.residentSerialNumber}"></td>
+    <td th:text="${relationship.familyRelationshipCode}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

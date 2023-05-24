@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>증명서 발급 시스템</title>
+</head>
+<body>
+  <h2>주민 정보</h2>
+  <form th:action="@{/submit}" th:object="${resident}" method="post">
+    <label for="serialNumber">주민일련번호:</label><br>
+    <input type="text" id="serialNumber" th:field="*{residentSerialNumber}" required><br>
+    <label for="fullName">성명:</label><br>
+    <input type="text" id="fullName" th:field="*{name}" required><br>
+    <label for="registrationNumber">주민등록번호:</label><br>
+    <input type="text" id="registrationNumber" th:field="*{residentRegistrationNumber}" required><br>
+    <label for="genderCode">성별코드:</label><br>
+    <input type="text" id="genderCode" th:field="*{genderCode}" required><br>
+    <label for="birthDateTime">출생일시:</label><br>
+    <input type="text" id="birthDateTime" th:field="*{birthDate}" required><br>
+    <label for="birthPlaceCode">출생장소코드:</label><br>
+    <input type="text" id="birthPlaceCode" th:field="*{birthPlaceCode}" required><br>
+    <label for="registeredAddress">등록기준지주소:</label><br>
+    <input type="text" id="registeredAddress" th:field="*{registrationBaseAddress}" required><br>
+    <label for="deathDateTime">사망일시:</label><br>
+    <input type="text" id="deathDateTime" th:field="*{deathDate}"><br>
+    <label for="deathPlaceCode">사망장소코드:</label><br>
+    <input type="text" id="deathPlaceCode" th:field="*{deathPlaceCode}"><br>
+    <label for="deathPlaceAddress">사망장소주소:</label><br>
+    <input type="text" id="deathPlaceAddress" th:field="*{deathPlaceAddress}"><br>
+    <input type="submit" value="제출">
+  </form>
+  <h2>메뉴</h2>
+  <a href="/residents/issuelist">증명서 발급 목록</a><br>
+  <a href="/residents/familyrelationship">가족관계 증명 발급</a><br>
+  <a href="/residents/birth">출생 신고</a><br>
+  <a href="/residents/death">사망 신고</a><br>
+  <a href="/residents/household">세대정보 등록 및 삭제</a>
+</body>
+</html>
